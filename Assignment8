@@ -1,0 +1,38 @@
+public class Assignment8 {
+
+public static void main (String[] args) {
+	double[] list1 = {16.1, 12.3, 22.2, 14.4};
+	double[] list2 = {1.5, 4.3, 7.0, 19.5, 25.1, 46.2};
+	
+	if (isSorted(list1)) {
+		System.out.println("list 1 is sorted: true");
+	}
+	else {
+		System.out.println("list 1 is sorted: false");
+	}
+	
+	if (isSorted(list2)) {
+		System.out.println("list 2 is sorted: true");
+	}
+	else {
+		System.out.println("list 2 is sorted: false");
+	}
+}
+
+public static boolean isSorted(double[] list) {
+
+	double lastValue = 0.0;
+	int counter = 0;
+	for (double d : list) {
+		if (counter > 0)
+		{
+			if (lastValue > d) {
+				return false;
+			}
+		}
+		lastValue = d;
+		counter ++;
+	}
+	return true;
+}
+}
